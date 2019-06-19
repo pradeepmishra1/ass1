@@ -1,0 +1,41 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+/** No CSS for this example */
+mat-slider {
+  width: 300px;
+}
+table {
+  border-collapse: collapse;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+}

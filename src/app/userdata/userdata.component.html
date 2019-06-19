@@ -1,0 +1,90 @@
+<p>
+  userdata works!
+</p>
+{{user | json}}
+
+<h1>app component</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>
+      full_name
+    </th>
+    <th>
+      address
+    </th>
+    <th>
+      gender
+    </th>
+    <th>
+      favourite_food
+    </th>
+    <th>
+      leave_coment
+    </th>
+    <th>
+      marital_status
+    </th>
+    <th>
+      cars
+    </th>
+    <th>
+      favourite_restaurent
+    </th>
+    <th>
+      rate_restaurent
+    </th>
+    <th>
+      country
+    </th>
+    <th>
+      states
+    </th>
+    <th>
+      city
+    </th>
+  </tr>
+  <tr *ngFor="let d of user; index as i">
+    <td>
+      {{d?.full_name }}
+    </td>
+    <td>
+      {{d?.address }}
+    </td>
+    <td>
+      {{d?.gender }}
+    </td>
+    <td>
+      {{d?.favourite_food }}
+    </td>
+    <td>
+      {{d?.leave_coment }}
+    </td>
+    <td>
+      {{d?.marital_status}}
+    </td>
+    <td>
+      {{selected}}
+    </td>
+
+    <td>
+      
+      {{d?.favourite_restaurent}}
+    </td>
+    <td>{{d?.rate_restaurent}}</td>
+    <td>
+      {{d?.country?.country_name}}
+    </td>
+    <td>
+      {{d?.state?.state_name}}
+    </td>
+    <td>
+      {{d?.city?.city_name}}
+    </td>
+    <td><button mat-raised-button (click)="edit(i)"> edit</button>
+      <button mat-raised-button (click)="delete(i)"> delete</button>
+
+    </td>
+  </tr>
+</table>
+

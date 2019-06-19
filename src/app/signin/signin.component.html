@@ -1,0 +1,15 @@
+<p>
+  signin works!
+</p>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Enter your email"  [(ngModel)]="user.email" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>
+
+<mat-form-field class="example-full-width">
+  <input matInput type="password" placeholder="password" [(ngModel)]="user.password" value="eg: abc">
+</mat-form-field>
+
+<button mat-raised-button color="primary" style=" padding: 8px" (click)="signinsave()">save</button>

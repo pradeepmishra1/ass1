@@ -1,0 +1,27 @@
+<h1>SIGN UP FORM</h1>
+<h3>Please fill in this form and create an account<h3>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="user name" [(ngModel)]="email_data.name" value="eg: abc">
+    </mat-form-field>
+
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="Enter your email" [(ngModel)]="email_data.email_addres"  [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="password" placeholder="password" [(ngModel)]="email_data.password" value="eg: abc">
+    </mat-form-field>
+
+
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="number" placeholder="mobile no." [(ngModel)]="email_data.mob_no" value="9655228845">
+    </mat-form-field>
+
+    <button mat-raised-button color="blue" style=" padding: 8px" (click)="signupsave()">save</button>

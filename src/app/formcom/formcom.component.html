@@ -1,0 +1,115 @@
+<p>
+  formcom works! {{aa}}
+</p>
+<table style="width:100%">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="full name" [(ngModel)]="personal_detail.full_name">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="address" [(ngModel)]="personal_detail.address"></textarea>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="gender" [(value)]="personal_detail.gender">
+          <mat-option value="m">male</mat-option>
+          <mat-option value="f">female</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Favorite food" [(ngModel)]="personal_detail.favourite_food">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a comment" [(ngModel)]="personal_detail.leave_coment"></textarea>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-radio-group aria-label="material status" [(ngModel)]="personal_detail.marital_status">
+        <mat-radio-button value="married">married</mat-radio-button>
+        <mat-radio-button value="unmarried">unmarried</mat-radio-button>
+      </mat-radio-group>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <mat-form-field>
+        <mat-label>Favorite restaurent</mat-label>
+        <mat-select [(ngModel)]="personal_detail.favourite_restaurent" name="food">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field>
+        <mat-label>countries</mat-label>
+        <mat-select [(ngModel)]="personal_detail.country" (selectionChange)="countryChange($event.value)">
+          <mat-option *ngFor="let c of countries" [value]="c">
+            {{c?.country_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </td>
+    <td>
+      <mat-form-field>
+        <mat-label>states</mat-label>
+        <mat-select [(ngModel)]="personal_detail.state" (selectionChange)="stateChange($event.value)">
+          <mat-option *ngFor="let s of states" [value]="s">
+            {{s?.state_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>city</mat-label>
+        <mat-select [(ngModel)]="personal_detail.city">
+          <mat-option *ngFor="let cty of city" [value]="cty">
+            {{cty?.city_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    </td>
+
+
+  </tr>
+
+  <tr>
+    <td>
+      <mat-form-field>
+        <mat-label>favourite cars</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option>None</mat-option>
+          <mat-option value="audi">audi</mat-option>
+          <mat-option value="alto">alto</mat-option>
+          <mat-option value="innova">innova</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+
+      <mat-slider class="example-margin" [max]="100" [min]="0" [step]="step" [thumbLabel]="thumbLabel"
+        [tickInterval]="tickInterval" [(ngModel)]="personal_detail.rate_restaurent" [vertical]="vertical">
+      </mat-slider>
+    </td>
+    <th><button mat-raised-button color="primary" style=" padding: 8px" (click)="save()">save</button>
+    </th>
+  </tr>
+
+</table>
