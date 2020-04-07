@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
       .subscribe((d: any) => {
         this.data = d;
       })
+      console.log("hiii")
   }
 
   //save(){}
